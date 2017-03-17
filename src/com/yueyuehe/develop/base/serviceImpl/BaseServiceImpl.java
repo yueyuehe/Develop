@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.yueyuehe.develop.base.dao.BaseDao;
+import com.yueyuehe.develop.base.daoImpl.BaseDaoImpl;
 import com.yueyuehe.develop.base.service.BaseService;
 
 /**
@@ -18,10 +19,11 @@ import com.yueyuehe.develop.base.service.BaseService;
  * @version 1.0.0
  */
 
+
 public class BaseServiceImpl<T> implements BaseService<T> {
 
 	@Resource
-	private BaseDao<T> baseDao;
+	private BaseDaoImpl<T> baseDao;
 
 	@Override
 	public void insert(T t) {
@@ -30,7 +32,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	}
 
 	@Override
-	public void insertBatch(List list) {
+	public void insertBatch(List<T> list) {
 		baseDao.insertBatch(list);
 
 	}
@@ -54,7 +56,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	}
 
 	@Override
-	public void update(List list) {
+	public void update(List<T> list) {
 		// TODO Auto-generated method stub
 		update(list);
 	}
@@ -62,11 +64,11 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	@Override
 	public T findById(Long id) {
 		// TODO Auto-generated method stub
-		return baseDao.findById(id);
+		return (T) baseDao.findById(id);
 	}
 
 	@Override
-	public List findAll() {
+	public List<T> findAll() {
 		// TODO Auto-generated method stub
 		return baseDao.findAll();
 	}

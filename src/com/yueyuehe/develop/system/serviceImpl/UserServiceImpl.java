@@ -1,14 +1,19 @@
 package com.yueyuehe.develop.system.serviceImpl;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yueyuehe.develop.base.serviceImpl.BaseServiceImpl;
 import com.yueyuehe.develop.system.dao.UserDao;
 import com.yueyuehe.develop.system.domain.User;
+import com.yueyuehe.develop.system.service.UserService;
+
 @Service
-public class UserServiceImpl extends BaseServiceImpl<User> {
-	@Resource
-	private UserDao dao;
+@Transactional
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService{
+//	@Resource(name="UserDaoImpl")
+//	private UserDao dao;
 }

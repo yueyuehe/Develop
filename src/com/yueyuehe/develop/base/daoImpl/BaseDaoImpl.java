@@ -20,6 +20,7 @@ import com.yueyuehe.develop.base.dao.BaseDao;
  * @version 1.0.0
  */
 
+
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Resource
