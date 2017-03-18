@@ -22,9 +22,12 @@ import com.yueyuehe.develop.base.service.BaseService;
 
 public class BaseServiceImpl<T> implements BaseService<T> {
 
-	@Resource
-	private BaseDaoImpl<T> baseDao;
-
+	//@Resource
+	private BaseDao<T> baseDao;
+	
+	public void setBaseDao(BaseDao<T> dao) {
+		this.baseDao = dao;
+	}
 	@Override
 	public void insert(T t) {
 		baseDao.insert(t);

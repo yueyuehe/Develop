@@ -14,6 +14,11 @@ import com.yueyuehe.develop.system.service.UserService;
 @Service
 @Transactional
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService{
-//	@Resource(name="UserDaoImpl")
-//	private UserDao dao;
+	@Resource
+	private UserDao dao;
+	
+	@Autowired
+	public void setBaseDao() {
+		super.setBaseDao(dao);
+	}
 }

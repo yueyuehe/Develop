@@ -4,6 +4,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,7 +21,7 @@ import com.yueyuehe.develop.base.dao.BaseDao;
  * @version 1.0.0
  */
 
-
+@Transactional
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Resource

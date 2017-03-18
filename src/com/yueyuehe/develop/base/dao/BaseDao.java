@@ -15,9 +15,6 @@ import org.hibernate.Session;
  */
 public interface BaseDao<T> {
 
-	
-
-	
 	/**
 	 * 插入
 	 * @Description 
