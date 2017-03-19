@@ -3,7 +3,6 @@ package com.yueyuehe.develop.system.serviceImpl;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yueyuehe.develop.base.serviceImpl.BaseServiceImpl;
@@ -15,8 +14,8 @@ import com.yueyuehe.develop.system.service.GroupService;
 public class GroupServiceImpl extends BaseServiceImpl<Group> implements GroupService{
 	@Resource
 	private GroupDao dao;
-	@Autowired
-	public void setBaseDao() {
+	
+	public  GroupServiceImpl() {
 		super.setBaseDao(dao);
 	}
 

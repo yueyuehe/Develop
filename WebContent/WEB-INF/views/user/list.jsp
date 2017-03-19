@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 <title></title>
 <!-- bootstrap -->
-<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../plugin/bootstrap/css/bootstrap.min.css" />
 <!-- bootstrap-table -->
-<link rel="stylesheet" href="../../bootstrap_table/bootstrap-table.min.css" />
+<link rel="stylesheet" href="../plugin/bootstrap_table/bootstrap-table.min.css" />
 
 <script type="text/javascript">
 function ajaxRequest(params){
@@ -53,7 +53,7 @@ function ajaxRequest(params){
 	</div>
 </body>
 
-<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript"src="../../bootstrap_table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"src="../plugin/bootstrap_table/bootstrap-table.min.js"></script>
 </html>

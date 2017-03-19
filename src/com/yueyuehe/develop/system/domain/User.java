@@ -47,7 +47,7 @@ public class User {
 	@Column(nullable=false)
 	private String status="0";
 	// 备注
-	private String bz;
+	private String remark;
 	// 创建时间
 	@Column(nullable=false)
 	private Date create_time=new Date();
@@ -66,6 +66,15 @@ public class User {
 	@ManyToMany(targetEntity = Role.class)
 	@JoinTable(name = "sys_user_role", joinColumns = @JoinColumn(name="user_id",referencedColumnName = "user_id"), inverseJoinColumns = @JoinColumn(name="role_id",referencedColumnName = "role_id"))
 	private Set<Role> roles = new HashSet<Role>();
+
+	
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 
 	public Long getUser_id() {
 		return user_id;
@@ -147,13 +156,7 @@ public class User {
 		this.status = status;
 	}
 
-	public String getBz() {
-		return bz;
-	}
-
-	public void setBz(String bz) {
-		this.bz = bz;
-	}
+	
 
 	public Date getCreate_time() {
 		return create_time;
@@ -207,7 +210,7 @@ public class User {
 	public String toString() {
 		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", name=" + name
 				+ ", ip=" + ip + ", skin=" + skin + ", number=" + number + ", email=" + email + ", phone=" + phone
-				+ ", status=" + status + ", bz=" + bz + ", create_time=" + create_time + ", login_time=" + login_time
+				+ ", status=" + status + ", remark=" + remark + ", create_time=" + create_time + ", login_time=" + login_time
 				+ ", last_login_time=" + last_login_time + ", login_count=" + login_count + ", groups=" + groups
 				+ ", roles=" + roles + "]";
 	}
@@ -216,7 +219,7 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((bz == null) ? 0 : bz.hashCode());
+		result = prime * result + ((remark == null) ? 0 : remark.hashCode());
 		result = prime * result + ((create_time == null) ? 0 : create_time.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((groups == null) ? 0 : groups.hashCode());
@@ -245,10 +248,10 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (bz == null) {
-			if (other.bz != null)
+		if (remark == null) {
+			if (other.remark != null)
 				return false;
-		} else if (!bz.equals(other.bz))
+		} else if (!remark.equals(other.remark))
 			return false;
 		if (create_time == null) {
 			if (other.create_time != null)

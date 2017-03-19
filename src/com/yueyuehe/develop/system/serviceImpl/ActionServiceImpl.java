@@ -17,8 +17,8 @@ public class ActionServiceImpl extends BaseServiceImpl<Action> implements Action
 	@Resource
 	private ActionDao dao;
 
-	@Autowired
-	public void setBaseDao() {
+	
+	public ActionServiceImpl() {
 		super.setBaseDao(dao);
 	}
 	
